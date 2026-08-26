@@ -1,6 +1,6 @@
 ---
 name: eval-driven-iteration
-description: "Use for AI, Agent, RAG, Text2SQL, retrieval, or classification systems when evaluation metrics are poor or changing, or when someone proposes tuning prompts, models, or retrieval parameters. Diagnose the failing stage and formulate a falsifiable hypothesis before changing the system. Make the smallest general fix, then validate in this order: known failures, known successes, independent samples when available, and only then the full evaluation. Never present an untested idea as a verified improvement. Trigger this skill whenever someone asks why accuracy changed, whether to tune a prompt, or which version is better, even if they do not use the words evaluation or diagnosis."
+description: "用于 AI、Agent、RAG、Text2SQL、检索或分类系统：当评测指标不理想或发生变化，或有人提出调整 Prompt、模型或检索参数时使用。修改系统前先定位失败阶段并提出可证伪的根因假设，只做最小范围的通用修复，然后依次验证已知失败、已知成功、独立样本，最后再做全量评测。没有 trace 或日志证据时，不得把未经验证的想法表述为已经生效。"
 ---
 
 # Eval-Driven Iteration
