@@ -1,0 +1,1 @@
+{"retrieval":{"top20_fields":20,"gold_recall":0.70,"precision":0.40},"completion":{"added_fields":37,"used_in_sql":1},"execution":{"accuracy":false}}
