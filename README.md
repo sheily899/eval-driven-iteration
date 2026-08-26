@@ -1,5 +1,8 @@
 # Eval-Driven Iteration
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Latest release](https://img.shields.io/github/v/release/sheily899/eval-driven-iteration)](https://github.com/sheily899/eval-driven-iteration/releases)
+
 > **When an AI metric drops, do not tune first. Diagnose first.**
 
 An evidence-first workflow for teams building and evaluating AI, Agent, RAG, and data-query systems.

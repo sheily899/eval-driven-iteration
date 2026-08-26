@@ -8,11 +8,13 @@
 
 扩大候选集合后，覆盖率上升，但精确率和最终任务成功率下降。
 
-输入：
+## 输入
 
 ```json
 {"case_id":"demo-002","query":"List customer names and order totals"}
 ```
+
+## 原始输出
 
 Before trace 摘要：
 
@@ -26,13 +28,29 @@ After trace 摘要：
 {"retrieval":{"top20_fields":20,"gold_recall":0.68,"precision":0.55},"completion":{"added_fields":8,"used_in_sql":2},"execution":{"accuracy":true}}
 ```
 
-## 诊断
+## 错误归因
+
+如果只看覆盖率，容易把问题归因成“检索能力不足”；实际还需要检查新增候选是否干扰后续模块。
+
+## 证据
 
 逐条对照新增候选与最终输出，发现绝大多数新增候选没有被后续模块使用，说明候选扩展规则过宽。
 
-## 最小实验
+## 最小修复
 
 先离线模拟相关性门槛和总上限，再用已知有效输入验证关键候选没有被过滤。只有离线结果支持后，才把参数变更带入模型评测。示例中新增候选从 37 个降至 8 个，实际使用率从 2.7%（1/37）提升到 25.0%（2/8）。
+
+## 修复后输出
+
+After trace 摘要：
+
+```json
+{"retrieval":{"top20_fields":20,"gold_recall":0.68,"precision":0.55},"completion":{"added_fields":8,"used_in_sql":2},"execution":{"accuracy":true}}
+```
+
+## 不能推出的结论
+
+这个案例证明候选扩展规则在该样本上过宽，但不能推出所有任务都应使用更小的候选集合。
 
 ## 可迁移经验
 
