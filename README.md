@@ -16,7 +16,7 @@
 
 ## 它和普通评测有什么不同
 
-| 普通做法 | Eval-Driven Iteration |
+| 普通评测做法 | Eval-Driven Iteration |
 |---|---|
 | 看到指标下降就调 Prompt | 先按 Router、Retrieval、Agent、执行等阶段定位 |
 | 只重跑失败 case | 同时回归已知成功 case，防止修复引入退化 |
