@@ -21,7 +21,7 @@ This method grew out of repeated real-world AI evaluation cycles where a single 
 2. **One change, one hypothesis.** Keep improvements attributable and reversible.
 3. **Protect the denominator.** Align cases and configurations; report infrastructure failures separately.
 
-## See it in 30 seconds
+## A quick look
 
 **Before:** A team sees a high failure percentage and immediately changes the model prompt.
 
@@ -62,7 +62,7 @@ The agent-facing specification is [`SKILL.md`](SKILL.md). A Chinese reference is
 Copy the repository into Claude's skills directory so the path is:
 
 ```text
-<skills目录>/eval-driven-iteration/SKILL.md
+<skills-directory>/eval-driven-iteration/SKILL.md
 ```
 
 Restart or refresh Claude Code after installation.
@@ -77,23 +77,11 @@ Copy the repository into the Codex user skills directory:
 
 On Windows this is commonly `%USERPROFILE%\\.codex\\skills\\eval-driven-iteration\\SKILL.md`. Reopen Codex after installation.
 
-## Before / After
-
-**Before:** A report shows a high failure rate in one stage, so the team immediately changes its model or prompt.
-
-**After:** The team checks structured run records, finds that the original output was correct and the error occurred during later processing or attribution, fixes the evaluator, and only then reassesses the model.
-
-Both examples include sanitized inputs, record summaries, and before/after attribution in [`examples/`](examples/).
-
-**Before:** Several parameters and modules are changed together after a metric drops.
-
-**After:** The team states a hypothesis that data could disprove, makes one minimal change, and validates it on known failures, known successes, and independent samples.
-
 ## Scope
 
 This workflow is for evaluating and iterating AI/Agent/RAG/Text2SQL systems; it is not a requirement for ordinary unit tests. Under network and model randomness, final labels and standardized result sets are the idempotency core; latency, token usage, and retries should be reported separately and may vary.
 
-## 示例
+## Examples
 
 Sanitized examples are in [`examples/`](examples/):
 
