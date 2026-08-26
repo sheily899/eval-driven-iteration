@@ -3,9 +3,9 @@ name: eval-driven-iteration
 description: "用于 AI、Agent、RAG、Text2SQL、检索或分类系统：当评测指标不理想或发生变化，或有人提出调整 Prompt、模型或检索参数时使用。修改系统前先定位失败阶段并提出可证伪的根因假设，只做最小范围的通用修复，然后依次验证已知失败、已知成功、独立样本，最后再做全量评测。没有 trace 或日志证据时，不得把未经验证的想法表述为已经生效。"
 ---
 
-# Eval-Driven Iteration
+# 评测驱动迭代
 
-This document is the normative instruction for agents. The human-facing explanations are in `README.md` and `README.zh-CN.md`.
+本文档是供 Agent 执行的规范说明；面向使用者的介绍请参阅 `README.md` 和 `README.zh-CN.md`。
 
 这不是一套"帮你自动改代码变强"的技巧,而是一套用来防止以下几种常见翻车模式的纪律:
 
