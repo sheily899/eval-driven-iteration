@@ -37,6 +37,30 @@ open examples/
 
 For Chinese documentation, see [`README.zh-CN.md`](README.zh-CN.md).
 
+## How to use it
+
+After installation, you usually do not need a special command. Mention the evaluation task and ask the agent to apply the skill explicitly:
+
+```text
+Use the eval-driven-iteration skill for this evaluation. First inspect the baseline and per-case evidence, classify failures by stage, and state a falsifiable hypothesis. Do not change code yet. Then propose the smallest isolated fix and a regression plan covering known failures, known successes, and independent samples.
+```
+
+Useful task templates:
+
+```text
+Use eval-driven-iteration to diagnose why metric X changed from A/B to C/D. Compare the same cases and denominator, separate infrastructure failures, and produce an evidence-based attribution report before suggesting a fix.
+```
+
+```text
+Use eval-driven-iteration to compare version A and version B. Do not tune either version. Check configuration parity, per-case outcomes, failure categories, and whether the difference is statistically meaningful for this sample size.
+```
+
+```text
+Use eval-driven-iteration before changing this prompt/retriever. Identify the failing stage, write one falsifiable hypothesis, specify what must not regress, and design the smallest known-failure/known-success validation.
+```
+
+For Claude.ai, upload or attach `SKILL.md` to the conversation if custom Skills are unavailable. For Claude Code and Codex, install the directory under the tool's skills path and start a new session; tasks matching the description will trigger it automatically. You can always force it with the phrase “use eval-driven-iteration”.
+
 ## Core workflow
 
 Baseline → capture a structured record for each case → classify failures by stage → state a falsifiable hypothesis → make one minimal fix → regress known failures → regress known successes → test independent samples → run the full benchmark.

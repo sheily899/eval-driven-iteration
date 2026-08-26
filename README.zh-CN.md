@@ -40,6 +40,34 @@ Windows 下 Codex 常见路径为：
 
 英文主 Skill 见 [`SKILL.md`](SKILL.md)，中文参考版见 [`SKILL.zh-CN.md`](SKILL.zh-CN.md)。
 
+## 安装后怎么调用
+
+安装完成后通常不需要特殊命令。直接在任务中明确要求使用该 Skill 即可。推荐复制下面这段话：
+
+```text
+请使用 eval-driven-iteration Skill 处理这次评测。先检查基线和逐条运行证据，按阶段归类失败并提出可证伪假设，暂时不要修改代码。然后提出最小、可隔离的修复方案，并设计包含已知失败、已知成功和独立样本的回归验证。
+```
+
+指标异常模板：
+
+```text
+请使用 eval-driven-iteration 诊断指标为什么从 A/B 变成 C/D。必须使用同一批样本和相同分母，单独排除基础设施失败，先输出有证据的归因报告，再提出修复方案。
+```
+
+版本对比模板：
+
+```text
+请使用 eval-driven-iteration 对比版本 A 和版本 B。不要直接调参，先检查配置是否一致、逐条结果、失败分类和样本量是否足以支持结论。
+```
+
+Prompt 或检索修改模板：
+
+```text
+请在修改 Prompt/检索器前使用 eval-driven-iteration：先定位失败阶段，写出一个可证伪假设，说明哪些行为不能退化，再设计已知失败和已知成功回归。
+```
+
+在 Claude.ai 中，如果当前账号没有启用自定义 Skill，可以把 `SKILL.md` 作为附件上传到对话中。Claude Code 和 Codex 则把目录放入对应的 skills 路径后重新开启会话；也可以随时直接说“请使用 eval-driven-iteration”。
+
 ## 示例
 
 脱敏示例位于 [`examples/`](examples/)，无需 API Key 或数据库即可阅读。
@@ -47,4 +75,3 @@ Windows 下 Codex 常见路径为：
 ## License
 
 本项目采用 [MIT License](LICENSE)。
-
