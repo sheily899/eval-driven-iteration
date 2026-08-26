@@ -12,7 +12,7 @@
 
 建立基线 → 逐 case 记录 trace → 按阶段分类失败 → 提出可证伪假设 → 最小修复 → 已知失败回归 → 已知成功回归 → 独立样本检查 → 全量评测。
 
-详细规范见 [`SKILL.md`](SKILL.md)。
+详细规范见英文主 Skill [`SKILL.md`](SKILL.md)，中文参考版见 [`SKILL.zh-CN.md`](SKILL.zh-CN.md)。
 
 ## 它和普通评测有什么不同
 
