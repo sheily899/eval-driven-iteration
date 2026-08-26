@@ -1,6 +1,6 @@
 ---
 name: eval-driven-iteration
-description: Use for AI, Agent, RAG, Text2SQL, retrieval, or classification systems when evaluation metrics are poor or changing, or when someone proposes tuning prompts, models, or retrieval parameters. Diagnose the failing stage and formulate a falsifiable hypothesis before changing the system. Make the smallest general fix, then validate in this order: known failures, known successes, independent samples when available, and only then the full evaluation. Never present an untested idea as a verified improvement. Trigger this skill whenever someone asks why accuracy changed, whether to tune a prompt, or which version is better, even if they do not use the words evaluation or diagnosis.
+description: "Use for AI, Agent, RAG, Text2SQL, retrieval, or classification systems when evaluation metrics are poor or changing, or when someone proposes tuning prompts, models, or retrieval parameters. Diagnose the failing stage and formulate a falsifiable hypothesis before changing the system. Make the smallest general fix, then validate in this order: known failures, known successes, independent samples when available, and only then the full evaluation. Never present an untested idea as a verified improvement. Trigger this skill whenever someone asks why accuracy changed, whether to tune a prompt, or which version is better, even if they do not use the words evaluation or diagnosis."
 ---
 
 # Eval-Driven Iteration

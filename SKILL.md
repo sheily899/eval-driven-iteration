@@ -1,6 +1,6 @@
 ---
 name: eval-driven-iteration
-description: Evidence-first workflow for evaluating and iterating AI, Agent, RAG, Text2SQL, retrieval, and classification systems.
+description: "Evidence-first workflow for evaluating and iterating AI, Agent, RAG, Text2SQL, retrieval, and classification systems."
 ---
 
 # Eval-Driven Iteration
@@ -30,4 +30,3 @@ Networks, service queues, and LLM sampling can change timing, token usage, and r
 ## Reporting and stop conditions
 
 Record the phenomenon, evidence, failure class, falsifiable hypothesis, minimal fix, unaffected scope, failure/success regressions, independent-sample check, and readiness for full evaluation. Stop when evidence is insufficient, samples are not comparable, infrastructure failures exceed the agreed threshold, the budget is exceeded, or the proposed change cannot be isolated.
-
