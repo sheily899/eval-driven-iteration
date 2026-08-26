@@ -1,12 +1,41 @@
 # Eval-Driven Iteration
 
-一套用于 AI 系统评测与迭代的通用工作方法，帮助团队用可核对的运行记录和可证伪假设定位问题，再做最小修复，避免被漂亮但不可靠的指标误导。
+> **When an AI metric drops, do not tune first. Diagnose first.**
 
-## 为什么需要它
+An evidence-first workflow for teams building and evaluating AI, Agent, RAG, and data-query systems.
 
-这套方法源于一次真实的 AI 系统迭代过程：团队发现仅凭一个总分无法解释改动是否有效，于是把“建立基线、记录证据、分层诊断、逐步回归”整理成一套可迁移的纪律。它适用于任何需要比较模型、Prompt、检索器或工具链的项目，不要求使用特定框架或数据集。
+It helps you distinguish:
 
-这里的“运行记录”指一次请求从输入到最终输出过程中留下的结构化信息，例如调用了哪些模块、产生了什么输出、耗时多久以及最终如何判定；英文资料中常称为 *trace*。本 Skill 不要求团队采用某一种日志系统。
+- model or prompt failures
+- retrieval and ranking failures
+- evaluation-logic mistakes
+- infrastructure and availability failures
+
+## Why this is worth using
+
+This method grew out of repeated real-world AI evaluation cycles where a single score could not explain whether a change helped. It turns that experience into a portable discipline: establish a baseline, preserve per-request evidence, form falsifiable hypotheses, make one minimal change, and verify the result before scaling up.
+
+## Three principles
+
+1. **Evidence before intuition.** A low score is a symptom, not a root cause.
+2. **One change, one hypothesis.** Keep improvements attributable and reversible.
+3. **Protect the denominator.** Align cases and configurations; report infrastructure failures separately.
+
+## See it in 30 seconds
+
+**Before:** A team sees a high failure percentage and immediately changes the model prompt.
+
+**After:** The team checks the per-request record, finds that the model output was correct but the evaluator misclassified a downstream error, fixes the evaluator, and only then reassesses model quality.
+
+Try the self-contained examples (no API key or database required):
+
+```bash
+git clone https://github.com/sheily899/eval-driven-iteration.git
+cd eval-driven-iteration
+open examples/
+```
+
+For Chinese documentation, see [`README.zh-CN.md`](README.zh-CN.md).
 
 ## 核心流程
 
